@@ -14,10 +14,16 @@ class Config:
 class DevelopmentConfig(Config):
     """Development configuration"""
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.getenv(
+    
+    db_url = os.getenv(
         'DATABASE_URL',
         'mysql+mysqlconnector://root:password@localhost:3306/nirvruv_db'
     )
+    if db_url and 'aivencloud' in db_url:
+        db_url = db_url.replace('mysql+mysqlconnector://', 'mysql+pymysql://')
+        db_url = db_url.replace('?ssl-mode=REQUIRED', '')
+        
+    SQLALCHEMY_DATABASE_URI = db_url
 
 class ProductionConfig(Config):
     """Production configuration"""
