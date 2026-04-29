@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nirvruv – Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Segoe UI", sans-serif;
+        color: #f9fafb;
+        background-image: radial-gradient(
+          circle at top,
+          #020617,
+          #020617 25%,
+          #020617 40%,
+          #020617 60%,
+          #0b1120 80%,
+          #0f172a 100%
+        );
+        background-attachment: fixed;
+      }
+
+      .bg-glow {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        opacity: 0.7;
+        z-index: -10;
+      }
+      .bg-glow::before,
+      .bg-glow::after {
+        content: "";
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(60px);
+      }
+      .bg-glow::before {
+        top: -10rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40rem;
+        height: 24rem;
+        background: rgba(37, 99, 235, 0.4);
+      }
+      .bg-glow::after {
+        right: -4rem;
+        bottom: -4rem;
+        width: 20rem;
+        height: 20rem;
+        background: rgba(56, 189, 248, 0.3);
+      }
+
+      .fade-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      }
+      .fade-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .btn-press {
+        transition: transform 0.12s ease-out, opacity 0.12s ease-out,
+          box-shadow 0.2s ease-out, background-color 0.2s ease-out,
+          border-color 0.2s ease-out;
+      }
+      .btn-press:hover {
+        transform: translateY(-1px) scale(1.03);
+      }
+      .btn-press:active {
+        transform: translateY(0) scale(0.96);
+        opacity: 0.85;
+      }
+
+      @media (max-width: 768px) {
+        .nav-scroll {
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .nav-scroll::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+
+    <!-- NAV -->
+    <header
+      class="sticky top-0 z-30 backdrop-blur-xl bg-black/70 border-b border-zinc-800/80"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="text-xs font-semibold tracking-[0.3em] text-zinc-300 uppercase"
+        >
+          NIRVRUV
+        </a>
+        <nav
+          class="nav-scroll hidden md:flex items-center gap-6 text-xs text-zinc-300"
+        >
+          <a href="index.html" class="hover:text-white transition-colors"
+            >Home</a
+          >
+          <a href="services.html" class="text-white">Services</a>
+          <a href="automations.html" class="hover:text-white transition-colors"
+            >Automations</a
+          >
+          <a href="clients.html" class="hover:text-white transition-colors"
+            >Our Clients</a
+          >
+          <a href="about.html" class="hover:text-white transition-colors"
+            >About Us</a
+          >
+          <a href="marketing.html" class="hover:text-white transition-colors"
+            >Marketing</a
+          >
+          <a href="youtube-growth.html" class="hover:text-white transition-colors"
+            >YouTube Growth</a
+          >
+          <a href="courses.html" class="hover:text-white transition-colors"
+            >Courses</a
+          >
+          <a href="books.html" class="hover:text-white transition-colors"
+            >Books</a
+          >
+          <a href="contact.html" class="hover:text-white transition-colors"
+            >Contact Us</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="min-h-screen text-white">
+      <!-- HERO -->
+      <section class="fade-section">
+        <div
+          class="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-8 lg:pt-24 lg:pb-12"
+        >
+          <p
+            class="text-[11px] font-semibold text-zinc-400 uppercase tracking-[0.25em]"
+          >
+            Services
+          </p>
+          <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold">
+            Services that turn brands into infrastructure.
+          </h1>
+          <p class="mt-5 text-sm sm:text-base text-zinc-400 max-w-2xl">
+            This page outlines the core ways nirvruv works with brands and
+            creators. Content here is placeholder for now—you can change any
+            wording later while keeping the structure and design.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="contact.html">
+              <button
+                class="btn-press rounded-full bg-white text-black px-6 py-2.5 text-xs sm:text-sm font-medium shadow-sm"
+              >
+                Talk to our team
+              </button>
+            </a>
+            <a href="index.html">
+              <button
+                class="btn-press rounded-full border border-zinc-700/80 px-6 py-2.5 text-xs sm:text-sm font-medium text-zinc-100 bg-zinc-950/40 backdrop-blur-sm hover:border-zinc-400"
+              >
+                Back to home
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: Service pillars -->
+      <section class="border-t border-zinc-800/80 fade-section">
+        <div
+          class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid gap-8 md:grid-cols-3"
+        >
+          <div class="space-y-3">
+            <h2 class="text-sm font-semibold text-zinc-200">
+              Brand & Growth Architecture
+            </h2>
+            <p class="text-sm text-zinc-400">
+              We design how your brand, offers, and messaging connect across
+              every channel so that growth feels coordinated, not chaotic.
+            </p>
+            <ul class="text-xs text-zinc-500 space-y-1.5">
+              <li>• Positioning & offer clarity</li>
+              <li>• Funnel & touchpoint mapping</li>
+              <li>• Measurement frameworks</li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h2 class="text-sm font-semibold text-zinc-200">
+              Performance Campaigns
+            </h2>
+            <p class="text-sm text-zinc-400">
+              Paid and owned media run against a system, not isolated ads—
+              built to compound instead of burn out.
+            </p>
+            <ul class="text-xs text-zinc-500 space-y-1.5">
+              <li>• Strategy & creative direction</li>
+              <li>• Experiment design and testing</li>
+              <li>• Reporting built for decisions</li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h2 class="text-sm font-semibold text-zinc-200">
+              AI-Enabled Workflows
+            </h2>
+            <p class="text-sm text-zinc-400">
+              We layer AI into your marketing stack so the system runs even when
+              you are not in the room.
+            </p>
+            <ul class="text-xs text-zinc-500 space-y-1.5">
+              <li>• Lead handling & qualification</li>
+              <li>• Content ops & repurposing</li>
+              <li>• Reporting and insight surfacing</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: Process overview -->
+      <section class="border-t border-zinc-800/80 fade-section">
+        <div
+          class="max-w-6xl mx-auto px-4 sm:px-6 py-16 lg:flex lg:items-start lg:gap-16"
+        >
+          <div class="flex-1">
+            <p
+              class="text-[11px] font-semibold text-zinc-400 uppercase tracking-[0.25em]"
+            >
+              How we work
+            </p>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-semibold">
+              A simple process for complex systems.
+            </h2>
+            <p class="mt-4 text-sm sm:text-base text-zinc-400">
+              This is a placeholder outline for nirvruv&apos;s working model.
+              When you are ready, we can swap this text with your exact process
+              without changing layout.
+            </p>
+          </div>
+          <div class="mt-8 lg:mt-0 flex-1 space-y-5">
+            <div
+              class="rounded-2xl border border-zinc-800/80 bg-black/40 p-4"
+            >
+              <p class="text-xs font-semibold text-zinc-300 uppercase">
+                01 · Audit & architecture
+              </p>
+              <p class="mt-2 text-sm text-zinc-400">
+                We map your current brand, funnels, and channels into a clear
+                diagram, then design what the infrastructure version should look
+                like.
+              </p>
+            </div>
+            <div
+              class="rounded-2xl border border-zinc-800/80 bg-black/40 p-4"
+            >
+              <p class="text-xs font-semibold text-zinc-300 uppercase">
+                02 · Build & instrument
+              </p>
+              <p class="mt-2 text-sm text-zinc-400">
+                We implement campaigns, content flows, and AI workflows while
+                wiring in the right measurement from day one.
+              </p>
+            </div>
+            <div
+              class="rounded-2xl border border-zinc-800/80 bg-black/40 p-4"
+            >
+              <p class="text-xs font-semibold text-zinc-300 uppercase">
+                03 · Optimize & scale
+              </p>
+              <p class="mt-2 text-sm text-zinc-400">
+                Once stable, we tune and scale the system—adding channels,
+                automations, and experiments as signal appears.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: CTA -->
+      <section class="border-t border-zinc-800/80 fade-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
+          <h2 class="text-2xl sm:text-3xl font-semibold">
+            Want to plug your brand into a system like this?
+          </h2>
+          <p class="mt-4 text-sm sm:text-base text-zinc-400">
+            When you are ready, this call-to-action can point to your preferred
+            contact method, application form, or calendar.
+          </p>
+          <div class="mt-8 flex justify-center gap-4">
+            <a href="contact.html">
+              <button
+                class="btn-press rounded-full bg-white text-black px-6 py-2.5 text-xs sm:text-sm font-medium shadow-sm"
+              >
+                Contact us
+              </button>
+            </a>
+            <a href="index.html">
+              <button
+                class="btn-press rounded-full border border-zinc-700/80 px-6 py-2.5 text-xs sm:text-sm font-medium text-zinc-100 bg-zinc-950/40 backdrop-blur-sm hover:border-zinc-400"
+              >
+                Back to home
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Scroll-triggered fade-up
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
+      document
+        .querySelectorAll(".fade-section")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
