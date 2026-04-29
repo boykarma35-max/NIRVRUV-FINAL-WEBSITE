@@ -22,7 +22,13 @@ class DevelopmentConfig(Config):
 class ProductionConfig(Config):
     """Production configuration"""
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    
+    # Auto-fix Aiven URLs for production deployment
+    db_url = os.getenv('DATABASE_URL')
+    if db_url:
+        db_url = db_url.replace('mysql+mysqlconnector://', 'mysql+pymysql://')
+        db_url = db_url.replace('?ssl-mode=REQUIRED', '')
+    SQLALCHEMY_DATABASE_URI = db_url
 
 class TestingConfig(Config):
     """Testing configuration"""

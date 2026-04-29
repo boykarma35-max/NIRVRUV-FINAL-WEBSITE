@@ -28,6 +28,9 @@ def create_app(config_name='development'):
     
     # Create tables
     with app.app_context():
-        db.create_all()
+        try:
+            db.create_all()
+        except Exception as e:
+            print(f"Warning: Could not connect to database on startup. {e}")
     
     return app
