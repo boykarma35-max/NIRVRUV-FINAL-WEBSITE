@@ -365,7 +365,92 @@ export default function HomePage() {
           </div>
         </Section>
 
-        {/* SECTION 5: Metrics (placeholder) */}
+        {/* SECTION 5: Methodology (How We Work) */}
+        <Section className="border-t border-zinc-800/80">
+          <div className="max-w-6xl mx-auto px-6 py-20">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="text-[11px] font-semibold text-zinc-400 uppercase tracking-[0.25em]">
+                How We Work
+              </p>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-semibold">
+                Our Methodology: Engineered for Unprecedented Growth
+              </h2>
+              <p className="mt-4 text-zinc-400 text-sm sm:text-base">
+                At NIRVRUV, we don’t just run campaigns; we build fully automated, data-driven ecosystems designed to scale. We treat your brand’s metrics with absolute precision, stripping away the guesswork and replacing it with predictive analytics, high-impact visual storytelling, and advanced AI systems.
+              </p>
+              <p className="mt-4 text-zinc-400 text-sm sm:text-base">
+                Here is exactly how we transform your brand’s architecture to dominate the digital landscape.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Phase 1 */}
+              <div className="rounded-3xl border border-zinc-800/80 bg-black/40 p-8 shadow-sm transition hover:border-zinc-600/80">
+                <div className="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-3">Phase 1</div>
+                <h3 className="text-xl font-medium text-white mb-4">Deep-Dive Audit & Algorithmic Alignment</h3>
+                <p className="text-sm text-zinc-400 mb-6">
+                  Before we execute, we analyze. We dissect your current analytics, audience retention graphs, and conversion rates to identify the exact friction points holding your brand back.
+                </p>
+                <ul className="space-y-4 text-sm text-zinc-300">
+                  <li><strong className="text-white">Metric Mapping:</strong> We establish clear, non-negotiable KPIs tailored to your revenue goals.</li>
+                  <li><strong className="text-white">Audience Profiling:</strong> We utilize data to map out your exact target demographic, ensuring every piece of content and every automated funnel hits with surgical precision.</li>
+                  <li><strong className="text-white">Infrastructure Review:</strong> We audit your existing tech stack to prepare for seamless AI integration.</li>
+                </ul>
+              </div>
+
+              {/* Phase 2 */}
+              <div className="rounded-3xl border border-zinc-800/80 bg-black/40 p-8 shadow-sm transition hover:border-zinc-600/80">
+                <div className="text-xs font-semibold text-sky-400 uppercase tracking-widest mb-3">Phase 2</div>
+                <h3 className="text-xl font-medium text-white mb-4">AI-Powered Ecosystem Architecture</h3>
+                <p className="text-sm text-zinc-400 mb-6">
+                  We build the engine. Whether launching high-converting dropshipping operations or packaging your expertise into premium AI courses, we automate the heavy lifting so you can focus on scaling.
+                </p>
+                <ul className="space-y-4 text-sm text-zinc-300">
+                  <li><strong className="text-white">Automated Commerce & Courses:</strong> We deploy sophisticated, AI-driven dropshipping funnels and course delivery platforms that operate flawlessly 24/7.</li>
+                  <li><strong className="text-white">Prompt-Driven Workflows:</strong> We integrate advanced prompt engineering into your marketing pipelines, automating customer acquisition and lead nurturing.</li>
+                  <li><strong className="text-white">High-End Asset Creation:</strong> We lay the groundwork for cinematic, visually striking brand assets that command attention and elevate your perceived market value.</li>
+                </ul>
+              </div>
+
+              {/* Phase 3 */}
+              <div className="rounded-3xl border border-zinc-800/80 bg-black/40 p-8 shadow-sm transition hover:border-zinc-600/80">
+                <div className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">Phase 3</div>
+                <h3 className="text-xl font-medium text-white mb-4">Omnichannel Domination (YouTube & Social)</h3>
+                <p className="text-sm text-zinc-400 mb-6">
+                  Attention is the currency of the modern web, and we know exactly how to capture it. We deploy aggressive, algorithm-optimized growth strategies across YouTube and all major social platforms.
+                </p>
+                <ul className="space-y-4 text-sm text-zinc-300">
+                  <li><strong className="text-white">Viral Engineering:</strong> We leverage data-backed hooks, optimal scene pacing, and bold visual storytelling to maximize watch time and engagement.</li>
+                  <li><strong className="text-white">Platform-Specific Optimization:</strong> Content is dynamically tailored for each platform’s unique algorithm, ensuring maximum organic reach.</li>
+                  <li><strong className="text-white">Community Cultivation:</strong> We don't just chase views; we build loyal, high-converting communities around your brand.</li>
+                </ul>
+              </div>
+
+              {/* Phase 4 */}
+              <div className="rounded-3xl border border-zinc-800/80 bg-black/40 p-8 shadow-sm transition hover:border-zinc-600/80">
+                <div className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">Phase 4</div>
+                <h3 className="text-xl font-medium text-white mb-4">Precision Scaling & Analytics Review</h3>
+                <p className="text-sm text-zinc-400 mb-6">
+                  Launch is just the beginning. We ruthlessly monitor the data, scaling what works and instantly pivoting what doesn’t.
+                </p>
+                <ul className="space-y-4 text-sm text-zinc-300">
+                  <li><strong className="text-white">Real-Time Analytics Dashboarding:</strong> You get full, transparent access to the metrics that matter most.</li>
+                  <li><strong className="text-white">A/B Testing & Iteration:</strong> We constantly refine thumbnails, ad copy, and sales funnels using real-time market feedback.</li>
+                  <li><strong className="text-white">Hyper-Scaling:</strong> Once a winning formula is identified, we deploy highly targeted capital to multiply your ROI and exponentially accelerate your brand's growth.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-16 text-center max-w-3xl mx-auto">
+              <p className="text-zinc-300 text-lg font-medium leading-relaxed">
+                Ready to bypass the traditional learning curve and automate your brand's evolution? <br className="hidden sm:block" />
+                Partner with NIRVRUV and let the data drive your next breakthrough.
+              </p>
+            </div>
+          </div>
+        </Section>
+
+        {/* SECTION 6: Metrics */}
         <Section className="border-t border-zinc-800/80">
           <div className="max-w-6xl mx-auto px-6 py-16 grid gap-8 sm:grid-cols-3">
             <div>
