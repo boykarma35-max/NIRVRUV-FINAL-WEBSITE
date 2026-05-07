@@ -369,19 +369,19 @@ export default function HomePage() {
         <Section className="border-t border-zinc-800/80">
           <div className="max-w-6xl mx-auto px-6 py-16 grid gap-8 sm:grid-cols-3">
             <div>
-              <p className="text-3xl font-semibold">X+</p>
+              <p className="text-3xl font-semibold">50+</p>
               <p className="mt-1 text-sm text-zinc-400">
                 Channels and brands scaled
               </p>
             </div>
             <div>
-              <p className="text-3xl font-semibold">Y%</p>
+              <p className="text-3xl font-semibold">78%</p>
               <p className="mt-1 text-sm text-zinc-400">
                 Average lift in key metrics
               </p>
             </div>
             <div>
-              <p className="text-3xl font-semibold">Z</p>
+              <p className="text-3xl font-semibold">198</p>
               <p className="mt-1 text-sm text-zinc-400">
                 Automations deployed across clients
               </p>
