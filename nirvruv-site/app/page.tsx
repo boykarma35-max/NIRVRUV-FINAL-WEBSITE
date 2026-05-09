@@ -171,46 +171,15 @@ export default function HomePage() {
               style={{ y: heroY, scale: heroScale }}
               className="mt-12 lg:mt-0 flex-1"
             >
-              <div className="relative aspect-[4/3] rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-black border border-slate-700/70 overflow-hidden shadow-[0_40px_120px_rgba(15,23,42,0.9)]">
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
+              <div className="relative aspect-square w-full max-w-md mx-auto rounded-full overflow-hidden shadow-[0_40px_120px_rgba(59,130,246,0.15)] border border-slate-700/70">
+                <motion.img
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="absolute inset-6 rounded-3xl bg-slate-900/60 backdrop-blur-xl border border-slate-600/60"
-                >
-                  <div className="h-full w-full flex flex-col justify-between p-6">
-                    <div className="flex justify-between items-center text-xs text-zinc-400">
-                      <span>Growth System Overview</span>
-                      <span className="inline-flex items-center gap-1">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                        Stable
-                      </span>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-3 text-[11px] text-zinc-300">
-                      <div className="rounded-2xl border border-zinc-700/70 bg-black/40 p-3">
-                        <p className="font-medium text-xs">
-                          Brand Infrastructure
-                        </p>
-                        <p className="mt-1 text-[11px] text-zinc-400">
-                          Systems-first positioning, offers, and touchpoints.
-                        </p>
-                      </div>
-                      <div className="rounded-2xl border border-zinc-700/70 bg-black/40 p-3">
-                        <p className="font-medium text-xs">YouTube Engine</p>
-                        <p className="mt-1 text-[11px] text-zinc-400">
-                          Strategy, content, and analytics as a single funnel.
-                        </p>
-                      </div>
-                      <div className="rounded-2xl border border-zinc-700/70 bg-black/40 p-3">
-                        <p className="font-medium text-xs">AI Automations</p>
-                        <p className="mt-1 text-[11px] text-zinc-400">
-                          Agents enforcing your growth playbook 24/7.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+                  src="/hero-logo.png" 
+                  alt="Nirvruv Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
