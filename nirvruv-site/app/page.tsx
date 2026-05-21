@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef } from "react";
+import HeroScroll from "./components/HeroScroll";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -41,15 +42,6 @@ function Section({
 }
 
 export default function HomePage() {
-  const heroRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.96]);
-
   return (
     <main className="min-h-screen text-white bg-[radial-gradient(circle_at_top,_#020617,_#020617_25%,_#020617_40%,_#020617_60%,_#0b1120_80%,_#0f172a_100%)]">
       {/* subtle blue glows */}
@@ -101,89 +93,7 @@ export default function HomePage() {
 
       <div className="relative isolate">
         {/* HERO */}
-        <section ref={heroRef} className="overflow-hidden">
-          <div className="max-w-6xl mx-auto px-6 pt-24 pb-20 lg:flex lg:items-center lg:gap-16">
-            {/* Left: copy */}
-            <motion.div
-              className="max-w-xl"
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-            >
-              <div className="text-sm uppercase tracking-[0.3em] text-zinc-400">
-                NIRVRUV
-              </div>
-              <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight">
-                Where Brands Become Infrastructure
-              </h1>
-
-              <div className="mt-6 space-y-1 text-zinc-300 text-sm sm:text-base">
-                <p>Founded in 2023.</p>
-                <p>Built on execution.</p>
-                <p>Engineered for scale.</p>
-              </div>
-
-              <p className="mt-6 text-zinc-400 leading-relaxed text-sm sm:text-base">
-                Nirvruv is a strategic marketing and AI systems firm designed
-                for businesses that intend to grow with precision. We do not
-                experiment with growth. We design it, structure it, and automate
-                it.
-              </p>
-
-              <p className="mt-4 text-zinc-400 leading-relaxed text-sm sm:text-base">
-                If you are looking for predictable expansion instead of
-                temporary spikes, you are in the right place.
-              </p>
-
-              {/* Hero CTAs */}
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/services">
-                  <motion.button
-                    whileHover={{
-                      scale: 1.03,
-                      boxShadow:
-                        "0 18px 45px rgba(59,130,246,0.45), 0 0 0 1px rgba(255,255,255,0.06)",
-                    }}
-                    whileTap={{ scale: 0.96, opacity: 0.8 }}
-                    className="rounded-full bg-white text-black px-6 py-3 text-sm font-medium shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                  >
-                    Services
-                  </motion.button>
-                </Link>
-
-                <Link href="/automations">
-                  <motion.button
-                    whileHover={{
-                      scale: 1.03,
-                      backgroundColor: "rgba(15,23,42,0.9)",
-                    }}
-                    whileTap={{ scale: 0.96, opacity: 0.8 }}
-                    className="rounded-full border border-zinc-700/80 px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-950/40 backdrop-blur-sm hover:border-zinc-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                  >
-                    Automations
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Right: animated visual */}
-            <motion.div
-              style={{ y: heroY, scale: heroScale }}
-              className="mt-12 lg:mt-0 flex-1"
-            >
-              <div className="relative aspect-square w-full max-w-md mx-auto rounded-full overflow-hidden shadow-[0_40px_120px_rgba(59,130,246,0.15)] border border-slate-700/70">
-                <motion.img
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  src="/hero-logo.jpg" 
-                  alt="Nirvruv Logo" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <HeroScroll />
 
         {/* SECTION 1: Value Props */}
         <Section className="border-t border-zinc-800/80">
