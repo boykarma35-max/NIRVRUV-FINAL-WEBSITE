@@ -64,36 +64,36 @@ export default function HomePage() {
       {/* NAV */}
       <nav className="sticky top-0 z-30 backdrop-blur-xl bg-black/70 border-b border-zinc-800/80">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="text-xs font-semibold tracking-[0.3em] text-zinc-300 uppercase">
+          <Link href="/" className="text-xs font-semibold tracking-[0.3em] text-zinc-300 uppercase hover:text-white transition-colors">
             NIRVRUV
-          </div>
+          </Link>
           <div className="hidden md:flex items-center gap-6 text-xs text-zinc-300">
             <Link href="/services" className="hover:text-white transition-colors">
               Services
             </Link>
-            <Link href="/products" className="hover:text-white transition-colors">
-              Products
-            </Link>
-            <Link
-              href="/automations"
-              className="hover:text-white transition-colors"
-            >
+            <Link href="/automations" className="hover:text-white transition-colors">
               Automations
-            </Link>
-            <Link
-              href="/courses-books"
-              className="hover:text-white transition-colors"
-            >
-              Courses/Books
             </Link>
             <Link href="/clients" className="hover:text-white transition-colors">
               Our Clients
             </Link>
+            <Link href="/marketing" className="hover:text-white transition-colors">
+              Marketing
+            </Link>
+            <Link href="/youtube-growth" className="hover:text-white transition-colors">
+              YouTube Growth
+            </Link>
+            <Link href="/courses" className="hover:text-white transition-colors">
+              Courses
+            </Link>
+            <Link href="/books" className="hover:text-white transition-colors">
+              Books
+            </Link>
             <Link href="/about" className="hover:text-white transition-colors">
-              About Nirvruv
+              About Us
             </Link>
             <Link href="/contact" className="hover:text-white transition-colors">
-              Contact
+              Contact Us
             </Link>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  src="/hero-logo.png" 
+                  src="/hero-logo.jpg" 
                   alt="Nirvruv Logo" 
                   className="w-full h-full object-cover"
                 />
