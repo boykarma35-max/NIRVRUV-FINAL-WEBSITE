@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef } from "react";
-import HeroScroll from "./components/HeroScroll";
+import LaptopScroll from "./components/LaptopScroll";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -43,11 +43,17 @@ function Section({
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen text-white bg-[radial-gradient(circle_at_top,_#020617,_#020617_25%,_#020617_40%,_#020617_60%,_#0b1120_80%,_#0f172a_100%)]">
+    <main className="min-h-screen text-white relative">
+      {/* Background image */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <img src="/hero-logo.jpg" alt="Background" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      </div>
+
       {/* subtle blue glows */}
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 -z-10 opacity-70"
+        className="pointer-events-none fixed inset-0 z-0 opacity-70"
       >
         <div className="absolute -top-40 left-1/2 h-96 w-[40rem] -translate-x-1/2 rounded-full bg-blue-600/40 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-80 w-80 translate-x-1/3 translate-y-1/3 rounded-full bg-sky-500/30 blur-3xl" />
@@ -93,7 +99,7 @@ export default function HomePage() {
 
       <div className="relative isolate">
         {/* HERO */}
-        <HeroScroll />
+        <LaptopScroll />
 
         {/* SECTION 1: Value Props */}
         <Section className="border-t border-zinc-800/80">
