@@ -1,43 +1,24 @@
 "use client";
 
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 
 export default function LaptopScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
-
-  // Video scrub logic
-  const [duration, setDuration] = useState(0);
-  useEffect(() => {
-    if (videoRef.current) {
-      const handleLoadedMetadata = () => setDuration(videoRef.current!.duration);
-      if (videoRef.current.readyState >= 1) handleLoadedMetadata();
-      videoRef.current.addEventListener("loadedmetadata", handleLoadedMetadata);
-      return () => videoRef.current?.removeEventListener("loadedmetadata", handleLoadedMetadata);
-    }
-  }, []);
-
-  useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      if (videoRef.current && duration > 0) {
-        requestAnimationFrame(() => {
-          if (videoRef.current) videoRef.current.currentTime = latest * duration;
-        });
-      }
-    });
-  }, [scrollYProgress, duration]);
 
   // Laptop opening and scaling animation
   // It starts smaller and slightly tilted down, then grows and straightens as you scroll
   const laptopScale = useTransform(scrollYProgress, [0, 0.4], [0.6, 1.05]);
   const laptopY = useTransform(scrollYProgress, [0, 0.4], [100, 0]);
   const laptopRotateX = useTransform(scrollYProgress, [0, 0.4], [15, 0]);
+
+  // Image scale animation inside the laptop
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   // Text inside the screen slowly reveals
   const textOpacity = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
@@ -60,18 +41,16 @@ export default function LaptopScroll() {
           {/* Laptop Screen (Lid) */}
           <div className="relative aspect-[16/10] bg-[#111] rounded-t-2xl sm:rounded-t-[32px] border-[8px] sm:border-[16px] border-[#1f1f1f] shadow-2xl overflow-hidden flex flex-col items-center justify-center">
             
-            {/* The Video Background inside the Laptop */}
-            <video
-              ref={videoRef}
-              src="https://cdn.pixabay.com/video/2021/08/04/83863-584758782_large.mp4"
-              muted
-              playsInline
-              preload="auto"
+            {/* The Image inside the Laptop */}
+            <motion.img
+              style={{ scale: imageScale }}
+              src="/hero-logo.jpg"
+              alt="Hero Logo"
               className="absolute inset-0 w-full h-full object-cover opacity-60"
             />
             {/* Screen inner overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80" />
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-black/40" />
 
             {/* Top Webcam Notch */}
             <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#333] shadow-inner" />
