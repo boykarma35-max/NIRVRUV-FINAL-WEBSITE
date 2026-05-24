@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef } from "react";
 import LaptopScroll from "./components/LaptopScroll";
@@ -159,7 +160,14 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="mt-10 lg:mt-0 flex-1">
-              <div className="aspect-[16/10] rounded-3xl bg-slate-950/80 border border-zinc-800/80 shadow-[0_30px_90px_rgba(15,23,42,0.9)]" />
+              <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-zinc-800/80 shadow-[0_30px_90px_rgba(15,23,42,0.9)]">
+                <Image
+                  src="/business_growth.png"
+                  alt="Business Growth Chart"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </Section>
