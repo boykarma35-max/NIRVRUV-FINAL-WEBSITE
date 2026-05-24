@@ -1,285 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Nirvruv – Marketing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          "Segoe UI", sans-serif;
-        color: #f9fafb;
-        background-image: radial-gradient(
-          circle at top,
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Nirvruv – Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      color: #f9fafb;
+      background-image: radial-gradient(circle at top,
           #020617,
           #020617 25%,
           #020617 40%,
           #020617 60%,
           #0b1120 80%,
-          #0f172a 100%
-        );
-        background-attachment: fixed;
-      }
-      .bg-glow {
-        pointer-events: none;
-        position: fixed;
-        inset: 0;
-        opacity: 0.7;
-        z-index: -10;
-      }
-      .bg-glow::before,
-      .bg-glow::after {
-        content: "";
-        position: absolute;
-        border-radius: 9999px;
-        filter: blur(60px);
-      }
-      .bg-glow::before {
-        top: -10rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40rem;
-        height: 24rem;
-        background: rgba(37, 99, 235, 0.4);
-      }
-      .bg-glow::after {
-        right: -4rem;
-        bottom: -4rem;
-        width: 20rem;
-        height: 20rem;
-        background: rgba(56, 189, 248, 0.3);
-      }
-      .fade-section {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-      }
-      .fade-section.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .btn-press {
-        transition: transform 0.12s ease-out, opacity 0.12s ease-out,
-          box-shadow 0.2s ease-out, background-color 0.2s ease-out,
-          border-color 0.2s ease-out;
-      }
-      .btn-press:hover {
-        transform: translateY(-1px) scale(1.03);
-      }
-      .btn-press:active {
-        transform: translateY(0) scale(0.96);
-        opacity: 0.85;
-      }
-      @media (max-width: 768px) {
-        .nav-scroll {
-          overflow-x: auto;
-          scrollbar-width: none;
-        }
-        .nav-scroll::-webkit-scrollbar {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="bg-glow"></div>
+          #0f172a 100%);
+      background-attachment: fixed;
+    }
 
-    <header
-      class="sticky top-0 z-30 backdrop-blur-xl bg-black/70 border-b border-zinc-800/80"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"
-      >
-        <a
-          href="/"
-          class="text-xs font-semibold tracking-[0.3em] text-zinc-300 uppercase"
-        >
-          NIRVRUV
-        </a>
-        <nav
-          class="nav-scroll hidden md:flex items-center gap-6 text-xs text-zinc-300"
-        >
-          <a href="/services" class="hover:text-white transition-colors"
-            >Services</a
-          >
-          <a href="/automations" class="hover:text-white transition-colors"
-            >Automations</a
-          >
-          <a href="/clients" class="hover:text-white transition-colors"
-            >Our Clients</a
-          >
-          <a href="/marketing" class="text-white">Marketing</a>
-          <a
-            href="/youtube-growth"
-            class="hover:text-white transition-colors"
-            >YouTube Growth</a
-          >
-          <a href="/courses" class="hover:text-white transition-colors"
-            >Courses</a
-          >
-          <a href="/books" class="hover:text-white transition-colors"
-            >Books</a
-          >
-          <a href="/about" class="hover:text-white transition-colors"
-            >About Us</a
-          >
-          <a href="/contact" class="hover:text-white transition-colors"
-            >Contact Us</a
-          >
-        </nav>
+    .bg-glow {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      opacity: 0.7;
+      z-index: -10;
+    }
+
+    .bg-glow::before,
+    .bg-glow::after {
+      content: "";
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(60px);
+    }
+
+    .bg-glow::before {
+      top: -10rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40rem;
+      height: 24rem;
+      background: rgba(37, 99, 235, 0.4);
+    }
+
+    .bg-glow::after {
+      right: -4rem;
+      bottom: -4rem;
+      width: 20rem;
+      height: 20rem;
+      background: rgba(56, 189, 248, 0.3);
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn-press {
+      transition: transform 0.12s ease-out, opacity 0.12s ease-out,
+        box-shadow 0.2s ease-out, background-color 0.2s ease-out,
+        border-color 0.2s ease-out;
+    }
+
+    .btn-press:hover {
+      transform: translateY(-1px) scale(1.03);
+    }
+
+    .btn-press:active {
+      transform: translateY(0) scale(0.96);
+      opacity: 0.85;
+    }
+
+    @media (max-width: 768px) {
+      .nav-scroll {
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .nav-scroll::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="sticky top-0 z-30 backdrop-blur-xl bg-black/70 border-b border-zinc-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="text-xs font-semibold tracking-[0.3em] text-zinc-300 uppercase">
+        NIRVRUV
+      </a>
+      <nav class="nav-scroll hidden md:flex items-center gap-6 text-xs text-zinc-300">
+        <a href="/services" class="hover:text-white transition-colors">Services</a>
+        <a href="/automations" class="hover:text-white transition-colors">Automations</a>
+        <a href="/clients" class="hover:text-white transition-colors">Our Clients</a>
+        <a href="/marketing" class="text-white">Marketing</a>
+        <a href="/youtube-growth" class="hover:text-white transition-colors">YouTube Growth</a>
+        <a href="/courses" class="hover:text-white transition-colors">Courses</a>
+        <a href="/books" class="hover:text-white transition-colors">Books</a>
+        <a href="/about" class="hover:text-white transition-colors">About Us</a>
+        <a href="/contact" class="hover:text-white transition-colors">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen text-white">
+    <section class="border-b border-zinc-800/80 fade-section">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-16">
+        <p class="text-[11px] font-semibold text-zinc-400 uppercase tracking-[0.25em]">
+          Marketing
+        </p>
+        <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold">
+          Marketing built like a system.
+        </h1>
+        <div class="mt-8 space-y-6 text-sm sm:text-base text-zinc-400 max-w-3xl">
+          <p>
+            We believe marketing shouldn't feel like a black box. You shouldn't have to guess where your budget is
+            going, translate confusing jargon, or wonder if a campaign actually aligns with your brand's true voice.
+          </p>
+          <p>
+            We approach growth differently. Instead of pushing a rigid, one-size-fits-all agency agenda, we build our
+            strategies around what your business actually needs to succeed. We are here to clarify your message, connect
+            with your audience, and keep you in the loop every step of the way.
+          </p>
+
+          <h3 class="text-xl font-medium text-white pt-4">The Core of Our Marketing</h3>
+          <p>
+            Great marketing is simply the art of putting the right message in front of the right people at the right
+            time. Here is how we break that down into core, actionable pillars:
+          </p>
+          <ul class="space-y-4">
+            <li><strong class="text-white">Minimalist Visual Storytelling:</strong> In a crowded digital space, clutter
+              gets ignored. We focus on clean, minimalist visual storytelling and crisp motion graphics to cut through
+              the noise. This ensures your core message is delivered instantly and memorably, without unnecessary
+              distractions.</li>
+            <li><strong class="text-white">Audience-First Content:</strong> We don't just chase algorithms; we speak to
+              humans. We research what your ideal customers are actively looking for and create content that answers
+              their questions, solves their problems, and builds genuine trust.</li>
+            <li><strong class="text-white">Data-Guided Decisions:</strong> While we value creativity, we let the numbers
+              guide the ship. We look at real-time analytics to understand what is resonating with your audience,
+              allowing us to gently steer the campaign toward the most effective strategies.</li>
+          </ul>
+
+          <h3 class="text-xl font-medium text-white pt-4">The NIRVRUV Advantage: Your Needs &gt; Our Ego</h3>
+          <p>
+            Many agencies have a habit of building campaigns to pad their own portfolios or satisfy their own creative
+            demands. That is not how we operate. Our edge in the market is our commitment to true partnership.
+          </p>
+          <ul class="space-y-4">
+            <li><strong class="text-white">Tailored to Your Reality:</strong> We listen before we build. Whether your
+              immediate need is establishing brand awareness, driving direct sales, or simply educating your market, we
+              design the workflow specifically to solve your immediate bottlenecks—not ours.</li>
+            <li><strong class="text-white">Radical Transparency:</strong> We open up the hood. You will always know
+              exactly what we are testing, why we are running a specific workflow, and how your resources are being
+              utilized. We walk you through the analytics so you are always empowered to understand your own growth.
+            </li>
+            <li><strong class="text-white">Honest Collaboration:</strong> If an idea isn't working, we tell you. If a
+              platform isn't the right fit for your demographic, we won't push it just to sell another service. We treat
+              your budget with the same respect we treat our own.</li>
+          </ul>
+
+          <p class="pt-4 text-zinc-300 font-medium">
+            Let’s build something real together. Reach out to the NIRVRUV team, and let's have an honest conversation
+            about where you want your brand to go next.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact">
+            <button class="btn-press rounded-full bg-white text-black px-6 py-3 text-sm font-medium shadow-sm">
+              Contact Us
+            </button>
+          </a>
+          <a href="/clients">
+            <button
+              class="btn-press rounded-full border border-zinc-700/80 px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-950/40 backdrop-blur-sm hover:border-zinc-400">
+              Our clients
+            </button>
+          </a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main class="min-h-screen text-white">
-      <section class="border-b border-zinc-800/80 fade-section">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-16">
-          <p
-            class="text-[11px] font-semibold text-zinc-400 uppercase tracking-[0.25em]"
-          >
-            Marketing
-          </p>
-          <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold">
-            Marketing built like a system.
-          </h1>
-          <p class="mt-4 text-sm sm:text-base text-zinc-400 max-w-2xl">
-            Placeholder content. Replace with your exact offers, outcomes, and
-            differentiators once you decide what you want to present.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/contact">
-              <button
-                class="btn-press rounded-full bg-white text-black px-6 py-3 text-sm font-medium shadow-sm"
-              >
-                Contact Us
-              </button>
-            </a>
-            <a href="/clients">
-              <button
-                class="btn-press rounded-full border border-zinc-700/80 px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-950/40 backdrop-blur-sm hover:border-zinc-400"
-              >
-                Our clients
-              </button>
-            </a>
-          </div>
+    <section class="border-b border-zinc-800/80 fade-section">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+        <div class="grid gap-8 lg:grid-cols-3">
+          <article class="rounded-3xl border border-zinc-800/80 bg-black/40 p-6">
+            <p class="text-[11px] font-semibold text-blue-400 uppercase tracking-[0.25em]">
+              Offer design
+            </p>
+            <h2 class="mt-3 text-lg font-semibold text-zinc-100">
+              Make your offer obvious to buy.
+            </h2>
+            <p class="mt-3 text-sm text-zinc-400">
+              Clarify positioning and package value so the customer feels the
+              “yes” without friction.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-zinc-400">
+              <li>• Positioning + messaging</li>
+              <li>• Offer stack + pricing logic</li>
+              <li>• Landing page narrative</li>
+            </ul>
+          </article>
+
+          <article class="rounded-3xl border border-zinc-800/80 bg-black/40 p-6">
+            <p class="text-[11px] font-semibold text-emerald-400 uppercase tracking-[0.25em]">
+              Funnel architecture
+            </p>
+            <h2 class="mt-3 text-lg font-semibold text-zinc-100">
+              Build conversion as infrastructure.
+            </h2>
+            <p class="mt-3 text-sm text-zinc-400">
+              Turn traffic into compounding demand with a clear path: capture,
+              qualify, convert, retain.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-zinc-400">
+              <li>• Lead capture + qualification</li>
+              <li>• Nurture sequences</li>
+              <li>• Sales handoff systems</li>
+            </ul>
+          </article>
+
+          <article class="rounded-3xl border border-zinc-800/80 bg-black/40 p-6">
+            <p class="text-[11px] font-semibold text-sky-400 uppercase tracking-[0.25em]">
+              Measurement
+            </p>
+            <h2 class="mt-3 text-lg font-semibold text-zinc-100">
+              Decisions backed by signal.
+            </h2>
+            <p class="mt-3 text-sm text-zinc-400">
+              Track what matters and remove noise so you can scale with
+              precision.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-zinc-400">
+              <li>• KPI definitions</li>
+              <li>• Weekly reporting cadence</li>
+              <li>• Iteration roadmap</li>
+            </ul>
+          </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="border-b border-zinc-800/80 fade-section">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-          <div class="grid gap-8 lg:grid-cols-3">
-            <article
-              class="rounded-3xl border border-zinc-800/80 bg-black/40 p-6"
-            >
-              <p
-                class="text-[11px] font-semibold text-blue-400 uppercase tracking-[0.25em]"
-              >
-                Offer design
-              </p>
-              <h2 class="mt-3 text-lg font-semibold text-zinc-100">
-                Make your offer obvious to buy.
-              </h2>
-              <p class="mt-3 text-sm text-zinc-400">
-                Clarify positioning and package value so the customer feels the
-                “yes” without friction.
-              </p>
-              <ul class="mt-5 space-y-2 text-sm text-zinc-400">
-                <li>• Positioning + messaging</li>
-                <li>• Offer stack + pricing logic</li>
-                <li>• Landing page narrative</li>
-              </ul>
-            </article>
-
-            <article
-              class="rounded-3xl border border-zinc-800/80 bg-black/40 p-6"
-            >
-              <p
-                class="text-[11px] font-semibold text-emerald-400 uppercase tracking-[0.25em]"
-              >
-                Funnel architecture
-              </p>
-              <h2 class="mt-3 text-lg font-semibold text-zinc-100">
-                Build conversion as infrastructure.
-              </h2>
-              <p class="mt-3 text-sm text-zinc-400">
-                Turn traffic into compounding demand with a clear path: capture,
-                qualify, convert, retain.
-              </p>
-              <ul class="mt-5 space-y-2 text-sm text-zinc-400">
-                <li>• Lead capture + qualification</li>
-                <li>• Nurture sequences</li>
-                <li>• Sales handoff systems</li>
-              </ul>
-            </article>
-
-            <article
-              class="rounded-3xl border border-zinc-800/80 bg-black/40 p-6"
-            >
-              <p
-                class="text-[11px] font-semibold text-sky-400 uppercase tracking-[0.25em]"
-              >
-                Measurement
-              </p>
-              <h2 class="mt-3 text-lg font-semibold text-zinc-100">
-                Decisions backed by signal.
-              </h2>
-              <p class="mt-3 text-sm text-zinc-400">
-                Track what matters and remove noise so you can scale with
-                precision.
-              </p>
-              <ul class="mt-5 space-y-2 text-sm text-zinc-400">
-                <li>• KPI definitions</li>
-                <li>• Weekly reporting cadence</li>
-                <li>• Iteration roadmap</li>
-              </ul>
-            </article>
-          </div>
+    <section class="border-t border-zinc-800/80 fade-section">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold">
+          Want marketing that doesn’t reset every month?
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-zinc-400">
+          We design the system behind the wins so it compounds.
+        </p>
+        <div class="mt-8 flex justify-center gap-4">
+          <a href="/contact">
+            <button class="btn-press rounded-full bg-white text-black px-6 py-3 text-sm font-medium shadow-sm">
+              Contact Us
+            </button>
+          </a>
+          <a href="/services">
+            <button
+              class="btn-press rounded-full border border-zinc-700/80 px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-950/40 backdrop-blur-sm hover:border-zinc-400">
+              Back to services
+            </button>
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="border-t border-zinc-800/80 fade-section">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center">
-          <h2 class="text-2xl sm:text-3xl font-semibold">
-            Want marketing that doesn’t reset every month?
-          </h2>
-          <p class="mt-4 text-sm sm:text-base text-zinc-400">
-            We design the system behind the wins so it compounds.
-          </p>
-          <div class="mt-8 flex justify-center gap-4">
-            <a href="/contact">
-              <button
-                class="btn-press rounded-full bg-white text-black px-6 py-3 text-sm font-medium shadow-sm"
-              >
-                Contact Us
-              </button>
-            </a>
-            <a href="/services">
-              <button
-                class="btn-press rounded-full border border-zinc-700/80 px-6 py-3 text-sm font-medium text-zinc-100 bg-zinc-950/40 backdrop-blur-sm hover:border-zinc-400"
-              >
-                Back to services
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      },
+      { threshold: 0.25 }
+    );
 
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
-          });
-        },
-        { threshold: 0.25 }
-      );
+    document
+      .querySelectorAll(".fade-section")
+      .forEach((el) => observer.observe(el));
+  </script>
+</body>
 
-      document
-        .querySelectorAll(".fade-section")
-        .forEach((el) => observer.observe(el));
-    </script>
-  </body>
 </html>
